@@ -1,0 +1,2 @@
+# calccreditspring
+CreditCalculiator with SpringBoot
