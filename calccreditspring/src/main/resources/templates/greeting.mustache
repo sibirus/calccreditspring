@@ -20,7 +20,9 @@
 
 </div>
 <form method="post" action ="calc">
+
 <!---------------------------------->
+
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Размер кредита</span>
@@ -35,62 +37,51 @@
         </div>
         <input type="number" step="0.001" name="sizePayment" class="form-control" placeholder="введите данные" aria-label="введите данные" aria-describedby="basic-addon1">
     </div>
+
     <!---------------------------------->
+
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Срок кредитования</span>
         </div>
         <input type="number" step="0.001" name="creditPeriod" class="form-control" placeholder="месяцев" aria-label="месяцев" aria-describedby="basic-addon1">
     </div>
+
     <!---------------------------------->
+
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Тип платежа</span>
         </div>
         <input type="number" step="0.001" name="paymentType" class="form-control" placeholder="Введи 0 или 1: 0 - аннуитетный, 1 - дифференцированный" aria-label="Введи 0 или 1: 0 - аннуитетный, 1 - дифференцированный" aria-describedby="basic-addon1">
     </div>
+
     <!---------------------------------->
+
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Ставка</span>
         </div>
         <input type="number" step="0.001" name="rate" class="form-control" placeholder="%" aria-label="%" aria-describedby="basic-addon1">
     </div>
+
     <!---------------------------------->
+
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Срок начала платежа</span>
         </div>
-        <input type="date" name="startDate" class="form-control" placeholder="ДД.ММ.ГГ" aria-label="ДД.ММ.ГГ" aria-describedby="basic-addon1">
+        <input type="text" name="startDate" class="form-control" placeholder="ДД.ММ.ГГ" aria-label="ДД.ММ.ГГ" aria-describedby="basic-addon1">
     </div>
     <!---------------------------------->
 
-
-
-
-    <div class="form-row">
-        <div class="col-auto">
-            <input type="number" step="0.001" name="NumberOne" class="form-control" placeholder="Введите число"/>
-        </div>
-        <p>&nbsp;</p>
-        <div class="col-auto">
-            <input type="number" step="0.001" name="NumberTwo" class="form-control" placeholder="Введите число"/>
-
-        </div>
-        <p>&nbsp;</p>
-        <div class="col-auto">
-            <input type="text" name="Operation" class="form-control" placeholder="Введите */+-"/>
-
-        </div>
-        <p>&nbsp;</p>
-        <button type="submit" class="btn btn-outline-primary">Calculation</button>
-        <p>&nbsp;</p>
-    </div>
-
-
+    <button type="submit" class="btn btn-outline-primary">Calculate</button>
 
 
 </form>
+
+
+
 </body>
 
 </html>
