@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 
 @Controller
 public class GreetingController
@@ -33,7 +32,8 @@ public class GreetingController
             Map<String, Object> model )
     {
         Enter enter = new Enter(sizeCredit, sizePayment, creditPeriod, paymentType, startDate, rate);
-        List<String> exit = enter.Count();
+        List<Enter> exit = enter.Count();
+
         model.put("exit", exit);
         return "calc";
     }

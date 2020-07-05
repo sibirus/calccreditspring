@@ -1,32 +1,40 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- Bootstrap CSS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <html>
+    <head>
+        <title>Spring Boot Mustache</title>
+        <style>
+            table {
+                border-collapse: collapse;
+            }
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Bootstrap CSS -->
-</head>
-<body>
-<div>
-    <h4>
-        <p class="text-primary">График</p>
-    </h4>
+            table, td, th {
+                border: 1px solid #999;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+    <h2>График платежей</h2>
+    <table>
+        <tr>
+            <th>№</th>
+            <th>Дата платежа</th>
+            <th>Платеж в месяц</th>
+            <th>Сумма в тело кредита</th>
+            <th>Сумма в % кредита</th>
+            <th>Остаток</th>
+        </tr>
 
-</div>
+        {{#exit}}
+            <tr>
+                <td>{{countNumber}}</td>
+                <td>{{dateFinall}}</td>
+                <td>{{paymentA}}</td>
+                <td>{{bodyCredit}}</td>
+                <td>{{paymentPersent}}</td>
+                <td>{{debit}}</td>
+            </tr>
+        {{/exit}}
 
-<div>
-
-
-    {{#exit}}
-        <li>{{.}}</li>
-    {{/exit}}
-
-
-</div>
-
-</body>
-
-</html>
+    </table>
+    </body>
+    </html>

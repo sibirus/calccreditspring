@@ -6,13 +6,17 @@ import java.util.*;
 
 public class Enter
 {
-    List<String> exitData = new ArrayList<>();//сохраняем все расчитанные данные сюда
+    private List<String> exitData = new ArrayList<>();//сохраняем все расчитанные данные сюда
+
+    private List<Enter> dao=new ArrayList<Enter>();//05/07
+
 
 
     //**************************************************
-    SimpleDateFormat dt = new SimpleDateFormat("dd.MM.yyyy");//дата
-    SimpleDateFormat dtTwo = new SimpleDateFormat("dd.MM.yyyy");
-    Date parsingDate = null;
+    private SimpleDateFormat dt = new SimpleDateFormat("dd.MM.yyyy");//дата
+    private SimpleDateFormat dtTwo = new SimpleDateFormat("dd.MM.yyyy");
+    private Date parsingDate = null;
+    private String dateFinall;
 
 
 
@@ -26,15 +30,15 @@ public class Enter
     private Double rate;//ставка,% по кредиту
 
     //**************************************************
-    double countNumber = 0;
-    double paymentA;//ануитентный платеж
-    double paymentD;//дифф.платеж
-    double paymentPersent;//погашение по процентам
-    double bodyCredit;//погашение тела кредита
-    double summ = 0;//общая сумма, по погашению основной задолжности
-    double debit;
-    double remains;//остаток
-    GregorianCalendar finall = new GregorianCalendar(Calendar.DAY_OF_MONTH, Calendar.MONTH, Calendar.YEAR);
+    private double countNumber = 0;
+    private double paymentA;//ануитентный платеж
+    private double paymentD;//дифф.платеж
+    private double paymentPersent;//погашение по процентам
+    private double bodyCredit;//погашение тела кредита
+    private double summ = 0;//общая сумма, по погашению основной задолжности
+    private double debit;
+    private double remains;//остаток
+    private GregorianCalendar finall = new GregorianCalendar(Calendar.DAY_OF_MONTH, Calendar.MONTH, Calendar.YEAR);
 
     //**************************************************
 
@@ -102,6 +106,8 @@ public class Enter
         this.exitData = exitData;
     }
 
+    //**************************************************
+
     public Enter(Double sizeCredit, Double sizePayment, Double creditPeriod, Integer paymentType, String startDate, Double rate)
     {
         this.sizeCredit = sizeCredit;
@@ -117,9 +123,22 @@ public class Enter
 
     }
 
+    public Enter(double countNumber, String dateFinall, double paymentA, double bodyCredit,double paymentPersent, double debit) {
+        this.countNumber = countNumber;
+        this.paymentA = paymentA;
+        this.paymentPersent = paymentPersent;
+        this.bodyCredit = bodyCredit;
+        this.debit = debit;
+        this.dateFinall = dateFinall;
+    }
+
+
+
     //**************************************************
 
-    public List<String> Count()
+
+
+    public List<Enter> Count()
     {
         try {
             parsingDate = dt.parse(startDate);//срок начала платежа, месяц
@@ -148,7 +167,12 @@ public class Enter
                         finall.add(Calendar.MONTH, 1);
                     }
 
-                    exitData.add(String.valueOf(countNumber + ";" + (dtTwo.format(finall.getTime())) + ";" + paymentA + ";" + bodyCredit + ";" + paymentPersent + ";" + debit));
+                    //exitData.add(String.valueOf(countNumber + ";" + (dtTwo.format(finall.getTime())) + ";" + paymentA + ";" + bodyCredit + ";" + paymentPersent + ";" + debit));
+                    dateFinall=dtTwo.format(finall.getTime());
+                    Enter daoX=new Enter(countNumber,dateFinall,paymentA,bodyCredit,paymentPersent,debit);
+                    dao.add(daoX);
+
+
                 }
             }
 
@@ -175,14 +199,21 @@ public class Enter
                         finall.add(Calendar.MONTH, 1);
                         dtTwo.format(finall.getTime());
                     }
-                    exitData.add(String.valueOf(countNumber + ";" + (dtTwo.format(finall.getTime())) + ";" + paymentD + ";" + bodyCredit + ";" + paymentPersent + ";" + debit));
+                    //exitData.add(String.valueOf(countNumber + ";" + (dtTwo.format(finall.getTime())) + ";" + paymentD + ";" + bodyCredit + ";" + paymentPersent + ";" + debit));
+                    dateFinall=dtTwo.format(finall.getTime());
+                    Enter daoX=new Enter(countNumber,dateFinall,paymentD,bodyCredit,paymentPersent,debit);
+                    dao.add(daoX);
+
+
                 }
             }
 
         } catch (ParseException x) {
 
         }
-        return exitData;
+        //**************************************************
+
+        return dao;
     }
 
     }
