@@ -1,40 +1,51 @@
-    <html>
-    <head>
-        <title>Spring Boot Mustache</title>
-        <style>
-            table {
-                border-collapse: collapse;
-            }
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-            table, td, th {
-                border: 1px solid #999;
-                padding: 5px;
-            }
-        </style>
-    </head>
-    <body>
-    <h2>Employees</h2>
-    <table>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+</head>
+
+    <tbody>
+    <div>
+        <h4>
+            <p class="text-primary">График платежей</p>
+        </h4>
+
+    </div>
+
+
+    <table class="table table-hover">
+    
+
+    <thead class="thead-light">
         <tr>
-            <th>№</th>
-            <th>Дата платежа</th>
-            <th>Платеж в месяц</th>
-            <th>Сумма в тело кредита</th>
-            <th>Сумма в % кредита</th>
-            <th>Остаток</th>
+            <th scope="col">№</th>
+            <th scope="col">Дата платежа</th>
+            <th scope="col">Платеж в месяц</th>
+            <th scope="col">Сумма в тело кредита</th>
+            <th scope="col">Сумма в % кредита</th>
+            <th scope="col">Остаток</th>
         </tr>
+        </thead>
+        <tbody>
+    {{#exit}}
+        <tr>
 
-        {{#exit}}
-            <tr>
-                <td>{{countNumber}}</td>
-                <td>{{dateFinall}}</td>
-                <td>{{paymentA}}</td>
-                <td>{{bodyCredit}}</td>
-                <td>{{paymentPersent}}</td>
-                <td>{{debit}}</td>
-            </tr>
-        {{/exit}}
+
+            <td>{{countNumber}}</td>
+            <td>{{dateFinall}}</td>
+            <td>{{paymentA}}</td>
+            <td>{{bodyCredit}}</td>
+            <td>{{paymentPersent}}</td>
+            <td>{{debit}}</td>
+        </tr>
+    {{/exit}}
 
     </table>
-    </body>
+    </tbody>
     </html>
