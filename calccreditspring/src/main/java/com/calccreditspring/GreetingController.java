@@ -61,14 +61,25 @@ public class GreetingController
 
         return "calc";
     }
-    @PostMapping ("add")
-    public String add ( Map<String, Object> model )
+
+    /*Обработаем фильтр*/
+    @PostMapping("filter")
+    public String filter (@RequestParam Integer filter, Map<String, Object> model )
     {
+        Iterable <BazaSQL> baza;
+        /*Если ввод не пустой, то ищем по фильтру, иначе выводим все*/
+        if(filter!=null)
+        {
+            baza = repo.findByPaymentType(filter);
+        }
+        else
+        {
+            baza=repo.findAll();
+        }
+        model.put("baza", baza);
 
-        Iterable <BazaSQL> baza=repo.findAll();
-        model.put("baza",baza);
         return "mainBaza";
-
     }
+
 
 }

@@ -20,7 +20,6 @@ public class BazaSQL
     private Double sizePayment;//размер первоначального взноса
     private Double creditPeriod;//в месяцах, срок кредитования
     private Integer paymentType;//тип платежа 0-аннуитентный, 1-дифференцированный
-    private String startDate;//срок начала платежа, дата
     private Double rate;//ставка,% по кредиту
 
     //Геттеры и сеттеры
@@ -66,13 +65,9 @@ public class BazaSQL
         this.paymentType = paymentType;
     }
 
-    public String getStartDate() {
-        return startDate;
-    }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
+
+
 
     public Double getRate() {
         return rate;

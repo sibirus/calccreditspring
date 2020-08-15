@@ -15,9 +15,20 @@
     <h4>
         <p class="text-primary">История ввода</p>
     </h4>
+    <input type="button" class="btn btn-outline-primary" onclick="history.back();" value="Назад"/>
+    <p>&nbsp;</p>
 
 </div>
+<form method="post" action ="filter">
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Фильтр по типу платежа</span>
+        </div>
+        <input type="number" name="filter" class="form-control" placeholder="Введи 0 или 1: 0 - аннуитетный, 1 - дифференцированный" aria-label="Введи 0 или 1: 0 - аннуитетный, 1 - дифференцированный" aria-describedby="basic-addon1">
+        </div>
 
+    <button type="submit" class="btn btn-outline-primary">Найти</button>
+</form>
 
 <table class="table table-hover">
 
@@ -46,6 +57,8 @@
     {{/baza}}
 
 </table>
-<input type="button" class="btn btn-outline-primary" onclick="history.back();" value="Назад"/>
+
+
+
 </tbody>
 </html>
