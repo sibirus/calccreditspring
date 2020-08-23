@@ -23,6 +23,7 @@
 <!--Добавим фильтр-->
 
 <form method="post" action ="filter">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Фильтр по типу платежа</span>

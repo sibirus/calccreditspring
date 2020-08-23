@@ -11,7 +11,11 @@
 </head>
 <body>
 
+<form action="/logout" method="post">
+    <button type="submit" class="btn btn-primary">Выйти из системы</button>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
 
+</form>
 
 <div>
     <h4>
@@ -20,6 +24,7 @@
 
 </div>
 <form method="post" action ="calc">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
 
 
 
@@ -84,8 +89,8 @@
 
 </form>
 
-<form method="GET" action ="add">
-
+<form method="GET" action ="baza">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
     <button type="submit" class="btn btn-outline-primary">История</button>
 
 </form>

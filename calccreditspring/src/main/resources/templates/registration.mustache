@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    </head>
+<body>
+
+
+
+
+
+<p class="text-primary">Новый пользователь добавлен</p>
+{{#usr}}
+    {{usr}}
+{{/usr}}
+<form action="/registration" method="post">
+    <div class="form-group">
+        <label for="Username">Username</label>
+        <input type="text" name="username" class="form-control" id="Username" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+        <label for="Password1">Password</label>
+        <input type="password" name="password" class="form-control" id="Password1" placeholder="Password">
+    </div>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    <button type="submit" class="btn btn-primary">Войти в систему</button>
+</form>
+</body>
+</html>
