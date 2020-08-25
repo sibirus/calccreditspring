@@ -43,6 +43,54 @@ public class Enter
     //**************************************************
 
 
+    public String getDateFinall() {
+        return dateFinall;
+    }
+
+    public void setDateFinall(String dateFinall) {
+        this.dateFinall = dateFinall;
+    }
+
+    public double getCountNumber() {
+        return countNumber;
+    }
+
+    public void setCountNumber(double countNumber) {
+        this.countNumber = countNumber;
+    }
+
+    public double getPaymentA() {
+        return paymentA;
+    }
+
+    public void setPaymentA(double paymentA) {
+        this.paymentA = paymentA;
+    }
+
+    public double getPaymentPersent() {
+        return paymentPersent;
+    }
+
+    public void setPaymentPersent(double paymentPersent) {
+        this.paymentPersent = paymentPersent;
+    }
+
+    public double getBodyCredit() {
+        return bodyCredit;
+    }
+
+    public void setBodyCredit(double bodyCredit) {
+        this.bodyCredit = bodyCredit;
+    }
+
+    public double getDebit() {
+        return debit;
+    }
+
+    public void setDebit(double debit) {
+        this.debit = debit;
+    }
+
     public List<String> getExitData() {
         return exitData;
     }

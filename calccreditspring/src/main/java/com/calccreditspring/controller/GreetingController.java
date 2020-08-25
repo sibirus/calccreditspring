@@ -64,6 +64,7 @@ public class GreetingController
         List<Enter> exit = enter.Count();
         model.put("exit", exit);
 
+
         return "calc";
     }
 
